@@ -1,5 +1,6 @@
 package com.example.loginvespertinofb
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.loginvespertinofb.databinding.ActivityMainBinding
@@ -21,6 +22,20 @@ class PostLogin : AppCompatActivity() {
 
         //Inicializar firebase auth
         auth = Firebase.auth
+
+        //Me permitan cambiar mi contraseña
+        // PEdir la contraseña actual
+        // PEdir la nueva y la confirmación
+        // Volver a reconectar al usuario
+        // Validar si la contraseña es valida
+        // Cambiar contraseña
+
+        //Otra Tarea, puede borrar su cuenta.
+        binding.btnChangePass.setOnClickListener {
+            val intent = Intent(this, ChangePassActivity::class.java)
+            startActivity(intent)
+        }
+
 
         binding.btnCerrarSesion.setOnClickListener {
             auth.signOut()

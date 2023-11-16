@@ -41,6 +41,12 @@ class MainActivity : AppCompatActivity() {
             signIn(email,password)
         }
 
+        //Reconocer el texto para registrar un usuario
+        binding.tvRegistrar.setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun signIn(email: String, password: String) {
